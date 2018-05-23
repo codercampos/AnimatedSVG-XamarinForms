@@ -1,4 +1,5 @@
 using System;
+using AnimatedSVG.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,11 @@ namespace AnimatedSVG
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage())
+            {
+                BarTextColor = Color.White,
+                BarBackgroundColor = Color.FromHex("#19A1FF")
+            };
         }
 
         protected override void OnStart()
