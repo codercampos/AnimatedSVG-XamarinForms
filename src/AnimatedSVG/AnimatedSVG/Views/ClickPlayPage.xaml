@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    Title="Manual Play Example"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    x:Name="clickPage"
+    x:Class="AnimatedSVG.Views.ClickPlayPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="7*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Margin="10" HorizontalTextAlignment="Center" 
+                   Text="Look how cool is my animation!&#x0a;Click on the icon again for playback" 
+                   HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            <forms:AnimationView 
+                x:Name="animationView" 
+                Grid.Row="1"
+                Animation="mobile_phone.json" 
+                Loop="false" 
+                AutoPlay="true"
+                ClickedCommand="{Binding ClickedCommand, Source={x:Reference clickPage}}"
+                VerticalOptions="FillAndExpand" 
+                HorizontalOptions="FillAndExpand" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
